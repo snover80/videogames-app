@@ -10,7 +10,7 @@ interface GameCarProps {
 }
 function GameCard({ game }: GameCarProps) {
   return (
-    <Card borderRadius="10px" overflow="hidden" width="290px">
+    <Card>
       <Image src={getCroppedImageUrl(game.background_image)}></Image>
       <CardBody>
         <Heading fontSize="lg">{game.name}</Heading>
