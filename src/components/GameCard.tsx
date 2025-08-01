@@ -1,4 +1,4 @@
-import { Card, CardBody, Heading, HStack, Image, Text } from "@chakra-ui/react";
+import { Card, CardBody, Heading, HStack, Image } from "@chakra-ui/react";
 
 import type { Game } from "../hooks/useGames";
 import PlatformList from "./PlatformList";
@@ -10,7 +10,7 @@ interface GameCarProps {
 }
 function GameCard({ game }: GameCarProps) {
   return (
-    <Card borderRadius="10px" overflow="hidden">
+    <Card borderRadius="10px" overflow="hidden" width="290px">
       <Image src={getCroppedImageUrl(game.background_image)}></Image>
       <CardBody>
         <Heading fontSize="lg">{game.name}</Heading>
