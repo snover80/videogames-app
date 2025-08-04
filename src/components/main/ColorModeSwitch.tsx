@@ -5,7 +5,9 @@ function ColorModeSwitch() {
   return (
     <HStack>
       <Switch size="md" onChange={toggleColorMode}></Switch>
-      <Text>Toggle {colorMode === "light" ? "Dark" : "Light"}</Text>
+      <Text whiteSpace="nowrap">
+        Toggle {colorMode === "light" ? "Dark" : "Light"}
+      </Text>
     </HStack>
   );
 }
