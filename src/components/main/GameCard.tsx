@@ -4,6 +4,7 @@ import type { Game } from "../../hooks/useGames";
 import PlatformList from "./PlatformList";
 import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "../../services/image-url";
+import Emoji from "./Emoji";
 
 interface GameCarProps {
   game: Game;
@@ -13,7 +14,10 @@ function GameCard({ game }: GameCarProps) {
     <Card>
       <Image src={getCroppedImageUrl(game.background_image)}></Image>
       <CardBody>
-        <Heading fontSize="lg">{game.name}</Heading>
+        <Heading fontSize="lg">
+          {game.name}
+          <Emoji rating={game.rating_top} />
+        </Heading>
         <HStack justifyContent="space-between">
           <PlatformList platforms={game.parent_platforms} />
           <CriticScore score={game.metacritic} />
