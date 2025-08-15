@@ -16,7 +16,7 @@ interface GenreListProps {
 }
 
 function GenreList({ onSelectGenre, selectedGenre }: GenreListProps) {
-  const { data, isLoading, error } = useGenre();
+  const { data: genres, isLoading, error } = useGenre();
 
   if (error) return null;
   if (isLoading) return <Spinner size="lg" />;
@@ -26,7 +26,7 @@ function GenreList({ onSelectGenre, selectedGenre }: GenreListProps) {
         Genres
       </Heading>
       <List>
-        {data.map((genre) => (
+        {genres?.results.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
             <HStack>
               <Image
