@@ -1,18 +1,16 @@
-import { Grid, GridItem, HStack, Show, Box } from "@chakra-ui/react";
-import "./App.css";
-import NavBar from "./components/NavBar";
-import GameGrid from "./components/main/GameGrid";
-import GenreList from "./components/SideBar/GenreList";
+import { Box, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 import { useState } from "react";
-import type { Genre } from "./hooks/useGenre";
+import "./App.css";
+import GameGrid from "./components/main/GameGrid";
+import GameHeading from "./components/main/GameHeading";
 import PlatformSelector from "./components/main/PlatformSelector";
 import SortSelector from "./components/main/SortSelector";
-import GameHeading from "./components/main/GameHeading";
-import type { Platform } from "./hooks/usePlatforms";
+import NavBar from "./components/NavBar";
+import GenreList from "./components/SideBar/GenreList";
 
 export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
+  genreId?: number;
+  platformId?: number;
   sort: string | null;
   searchText: string;
 }
@@ -42,9 +40,9 @@ function App() {
           <GridItem area="aside" paddingX="10px">
             <GenreList
               onSelectGenre={(genre) => {
-                setGameQuery({ ...gameQuery, genre });
+                setGameQuery({ ...gameQuery, genreId: genre.id });
               }}
-              selectedGenre={gameQuery.genre}
+              selectedGenreId={gameQuery.genreId}
             />
           </GridItem>
         </Show>
@@ -54,9 +52,9 @@ function App() {
             <HStack spacing={5}>
               <PlatformSelector
                 onSelectPlatform={(platform) =>
-                  setGameQuery({ ...gameQuery, platform })
+                  setGameQuery({ ...gameQuery, platformId: platform.id })
                 }
-                selectedPlatform={gameQuery.platform}
+                selectedPlatformId={gameQuery.platformId}
               />
               <SortSelector
                 onSelectSort={(sort) => setGameQuery({ ...gameQuery, sort })}
