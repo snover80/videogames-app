@@ -1,24 +1,19 @@
 import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Fragment } from "react/jsx-runtime";
-import type { GameQuery } from "../../App";
 import useGames from "../../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
 
-interface GameGridProps {
-  gameQuery: GameQuery;
-}
-
-function GameGrid({ gameQuery }: GameGridProps) {
+function GameGrid() {
   const {
     data: games,
     error,
     isLoading,
     fetchNextPage,
     hasNextPage,
-  } = useGames(gameQuery);
+  } = useGames();
   const skeleton = [1, 2, 3, 4, 5, 6];
 
   // Este nos sirve para obtener cuantas paginas hemos reocrrido hasta el momento
