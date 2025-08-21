@@ -1,11 +1,11 @@
 import { Card, CardBody, Heading, HStack, Image } from "@chakra-ui/react";
 
-import type { Game } from "../../hooks/useGames";
 import PlatformList from "./PlatformList";
 import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "../../services/image-url";
 import Emoji from "./Emoji";
 import { Link } from "react-router-dom";
+import type { Game } from "../../entities/Game";
 
 interface GameCarProps {
   game: Game;

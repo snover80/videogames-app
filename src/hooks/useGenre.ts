@@ -3,14 +3,7 @@ import ms from "ms";
 import { APIClient, type FetchResponse } from "../services/api-client";
 
 import genres from "../data/genres";
-
-export interface Genre {
-  id: number;
-  name: string;
-  slug: string;
-  games_count: number;
-  image_background: string;
-}
+import type { Genre } from "../entities/Genre";
 
 const genreService = new APIClient<Genre>("/genres");
 const useGenre = () => {

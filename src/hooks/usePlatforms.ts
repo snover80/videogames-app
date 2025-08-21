@@ -4,12 +4,7 @@ import { APIClient, type FetchResponse } from "../services/api-client";
 
 import ms from "ms";
 import platforms from "../data/platforms";
-
-export interface Platform {
-  id: number;
-  name: string;
-  slug: string;
-}
+import type { Platform } from "../entities/Platform";
 
 const platformService = new APIClient<Platform>("/platforms/lists/parents");
 
