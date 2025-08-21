@@ -4,7 +4,7 @@ import { APIClient, type FetchResponse } from "../services/api-client";
 
 import ms from "ms";
 import platforms from "../data/platforms";
-import type { Platform } from "../entities/Platform";
+import type Platform from "../entities/Platform";
 
 const platformService = new APIClient<Platform>("/platforms/lists/parents");
 
