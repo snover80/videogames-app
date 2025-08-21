@@ -27,4 +27,9 @@ export class APIClient<T> {
     });
     return res.data;
   };
+
+  get = async (pathParam: string): Promise<T> => {
+    const res = await apiClient.get<T>(`${this.endpoint}/${pathParam}`);
+    return res.data;
+  };
 }

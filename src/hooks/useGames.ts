@@ -9,6 +9,8 @@ import useGameQueryStore from "../store";
 export interface Game {
   id: string;
   name: string;
+  slug: string;
+  description_raw: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;
